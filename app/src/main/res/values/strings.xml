@@ -5,4 +5,8 @@
     <string name="login_button">Login</string>
     <string name="login_cancel_button">Cancel</string>
     <string name="login_error_message">La contraseña debe contener al menos 6 carácteres</string>
+    <string name="search_title">Search</string>
+    <string name="filter_title">Title</string>
+    <string name="product_title">Titulo</string>
+    <string name="product_description">hola, este es un nuevo producto.</string>
 </resources>

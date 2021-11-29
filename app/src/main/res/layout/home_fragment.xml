@@ -15,21 +15,43 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:title="@string/app_name"
-            app:navigationIcon="@drawable/hamburger_menu"
+            app:navigationIcon="@drawable/menu"
             />
     </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="160dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="70dp"
+        app:cardBackgroundColor="@color/purple_200"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="@dimen/cardview_default_elevation"
         >
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Home app"
-            android:textSize="24sp"
-            />
-    </LinearLayout>
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/product_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="@string/product_description"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                />
+        </LinearLayout>
 
+    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>
