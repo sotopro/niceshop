@@ -11,6 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.danielsoto.niceshop.network.ProductEntry;
 
 public class HomeFragment extends Fragment {
 
@@ -24,6 +28,16 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
 
         setUpToolbar(view);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
+        ProductCardRecyclerViewAdapter adapter = new ProductCardRecyclerViewAdapter(
+                ProductEntry.initProductEntryList(getResources()));
+        recyclerView.setAdapter(adapter);
+        int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
+        int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);
+        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
 
         return view;
     }
