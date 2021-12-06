@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorOnPrimary"
         android:paddingStart="@dimen/product_grid_spacing"
         android:paddingEnd="@dimen/product_grid_spacing"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
