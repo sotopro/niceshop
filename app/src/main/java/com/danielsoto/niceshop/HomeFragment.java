@@ -1,11 +1,13 @@
 package com.danielsoto.niceshop;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +40,10 @@ public class HomeFragment extends Fragment {
         int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);
         recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
-
+        // set shape corner background for API 23+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.findViewById(R.id.product_grid).setBackgroundResource(R.drawable.background_shape);
+        }
         return view;
     }
 
@@ -48,6 +53,12 @@ public class HomeFragment extends Fragment {
         if(activity != null) {
             activity.setSupportActionBar(toolbar);
         }
+        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
+                getContext(),
+                view.findViewById(R.id.product_grid),
+                new AccelerateDecelerateInterpolator(),
+                getContext().getResources().getDrawable(R.drawable.menu),
+                getContext().getResources().getDrawable(R.drawable.menu_close)));
     }
 
     @Override

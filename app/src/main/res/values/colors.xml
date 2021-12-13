@@ -11,4 +11,5 @@
     <color name="white">#ffffff</color>
     <color name="grey">#bdbdbd</color>
     <color name="textColorPrimary">#000000</color>
+    <color name="productGridBackgroundColor">#FFFBFA</color>
 </resources>
