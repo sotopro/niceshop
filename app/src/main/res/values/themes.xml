@@ -33,4 +33,10 @@
         <item name="android:textColor">?attr/colorSecondaryVariant</item>
         <item name="android:textSize">24dp</item>
     </style>
+    <style name="Widget.NiceShop.Backdrop" parent="">
+        <item name="android:background">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="Widget.NiceShop.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
 </resources>

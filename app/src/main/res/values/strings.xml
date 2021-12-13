@@ -9,4 +9,12 @@
     <string name="filter_title">Title</string>
     <string name="product_title">Title</string>
     <string name="product_description">hi, this is a new product.</string>
+    <string name="menu_hamburger_featured">Featured</string>
+    <string name="menu_hamburger_category">Category</string>
+    <string name="menu_hamburger_shoes">Shoes</string>
+    <string name="menu_hamburger_t_shirt">T-Shirt</string>
+    <string name="menu_hamburger_pants">Pants</string>
+    <string name="menu_hamburger_dresses">Dresses</string>
+    <string name="menu_hamburger_tops">Tops</string>
+    <string name="menu_hamburger_account">Account</string>
 </resources>
