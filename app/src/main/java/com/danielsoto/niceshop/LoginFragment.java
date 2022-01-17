@@ -1,5 +1,6 @@
 package com.danielsoto.niceshop;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.KeyEvent;
@@ -15,7 +16,11 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+
 public class LoginFragment extends Fragment {
+    private DatabaseHelper databaseHelper;
+    private Context context;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
@@ -24,7 +29,7 @@ public class LoginFragment extends Fragment {
         final TextInputEditText usernameEditText = view.findViewById(R.id.username_edit_text);
         MaterialButton loginButton = view.findViewById(R.id.login_button);
         MaterialButton registerButton = view.findViewById(R.id.login_register_button);
-
+        databaseHelper = new DatabaseHelper(this.getContext());
         // validar si la contraseña contiene 6 o mas caracteres.
 
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -32,18 +37,25 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 String getUsername = usernameEditText.getText().toString();
                 String getPassword = passwordEditText.getText().toString();
+                databaseHelper.registerUser(new Data(getUsername, getPassword));
+
             }
         });
+
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isPasswordValid(passwordEditText.getText())) {
-                    passwordTextInput.setError(getString(R.string.login_error_message));
-                } else {
-                    passwordTextInput.setError(null); // limpiar el error
-                    ((NavigationHost) getActivity()).navigateTo(new HomeFragment(), false);
-                }
+                String getUsername = usernameEditText.getText().toString();
+                String getPassword = passwordEditText.getText().toString();
+                databaseHelper.loginUser(new Data(getUsername, getPassword));
+//                if(!isPasswordValid(passwordEditText.getText())) {
+//                    passwordTextInput.setError(getString(R.string.login_error_message));
+//                } else {
+//                    passwordTextInput.setError(null); // limpiar el error
+//                    ((NavigationHost) getActivity()).navigateTo(new HomeFragment(), false);
+//                }
             }
         });
 
