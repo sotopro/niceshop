@@ -77,14 +77,14 @@
                 style="@style/Widget.MaterialComponents.Button"
                 />
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/login_cancel_button"
+                android:id="@+id/login_register_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_toStartOf="@+id/login_button"
                 android:layout_toLeftOf="@+id/login_button"
-                android:text="@string/login_cancel_button"
+                android:text="@string/login_register_button"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 />
         </RelativeLayout>

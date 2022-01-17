@@ -21,9 +21,19 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.login_fragment, container, false);
         final TextInputLayout passwordTextInput = view.findViewById(R.id.password_text_input);
         final TextInputEditText passwordEditText = view.findViewById(R.id.password_edit_text);
+        final TextInputEditText usernameEditText = view.findViewById(R.id.username_edit_text);
         MaterialButton loginButton = view.findViewById(R.id.login_button);
+        MaterialButton registerButton = view.findViewById(R.id.login_register_button);
 
         // validar si la contraseña contiene 6 o mas caracteres.
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getUsername = usernameEditText.getText().toString();
+                String getPassword = passwordEditText.getText().toString();
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
